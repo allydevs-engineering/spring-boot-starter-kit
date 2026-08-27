@@ -1,3 +1,16 @@
 spring:
-  application:
-    name: spring-boot-starter-kit
+    application:
+        name: spring-boot-starter-kit
+
+application:
+    name: Spring Boot Starter Kit
+    version: 0.1.0
+
+server:
+    shutdown: graceful
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: health,info
