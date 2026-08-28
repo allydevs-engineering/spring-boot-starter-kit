@@ -1,9 +1,8 @@
 package com.allydevs.starter.web;
 
 import com.allydevs.starter.config.ApplicationProperties;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
 
 @SuppressWarnings("unused")
 @RestController
@@ -19,5 +18,10 @@ public class ApiController {
   @GetMapping
   public ApiResponse getApplicationInfo() {
     return new ApiResponse(applicationProperties.name(), applicationProperties.version(), "UP");
+  }
+
+  @PostMapping("/echo")
+  public EchoResponse echo(@Valid @RequestBody EchoRequest request) {
+    return new EchoResponse(request.message());
   }
 }
