@@ -4,7 +4,6 @@ import com.allydevs.starter.config.ApplicationProperties;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
-@SuppressWarnings("unused")
 @RestController
 @RequestMapping("/api/v1")
 public class ApiController {
